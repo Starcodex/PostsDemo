@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Posts</string>
+
+    <string name="network_error">there was an error on connection</string>
+    <string name="refresh">reload</string>
+
+</resources>

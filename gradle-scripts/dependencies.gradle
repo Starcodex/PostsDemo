@@ -1,0 +1,87 @@
+ext {
+
+    //Version
+    supportVersion = '27.1.1'
+    suppportConstraintVersion = '1.1.2'
+    retrofitVersion = '2.3.0'
+    rxAndroidVersion = '2.0.1'
+    daggerVersion = '2.14.1'
+    rxJavaVersion = '2.0.2'
+    butterknifeVersion = '8.8.1'
+    junitVersion = '4.12'
+    okHttpVersion = '3.6.0'
+    roomVersion = '1.0.0'
+
+    //Packages
+    supportPackage = 'com.android.support'
+    playServicesPackage = 'com.google.android.gms'
+    supportConstraintPackage = 'com.android.support.constraint'
+    retrofitPackage = 'com.squareup.retrofit2'
+    reactivePackage = 'io.reactivex.rxjava2'
+    junitPackage = 'junit'
+    daggerPackage = 'com.google.dagger'
+    butterknifePackage = 'com.jakewharton'
+    okHttpPackage = 'com.squareup.okhttp3'
+    roomPackage = 'android.arch.persistence.room'
+
+    supportDependencies = [
+
+            design      : buildDependency(supportPackage, 'design', supportVersion),
+            recyclerView: buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+            cardView    : buildDependency(supportPackage, 'cardview-v7', supportVersion),
+            appCompat   : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            constraint   : buildDependency(supportConstraintPackage, 'constraint-layout', suppportConstraintVersion),
+
+    ]
+
+
+    retrofitDependencies = [
+
+            retrofit     : buildDependency(retrofitPackage, 'retrofit', retrofitVersion),
+            gson         : buildDependency(retrofitPackage, 'converter-gson', retrofitVersion),
+            rxAdapterJava: buildDependency(retrofitPackage, 'adapter-rxjava2', retrofitVersion)
+    ]
+
+    rxDependencies = [
+
+            rxAndroid: buildDependency(reactivePackage, 'rxandroid', rxAndroidVersion),
+            rxJava   : buildDependency(reactivePackage, 'rxjava', rxJavaVersion)
+    ]
+
+
+    butterKnifeDependencies = [
+
+            butterknife        : buildDependency(butterknifePackage, 'butterknife', butterknifeVersion),
+            butterknifeCompiler: buildDependency(butterknifePackage, 'butterknife-compiler', butterknifeVersion)
+    ]
+
+    roomDependencies = [
+
+            runtime : buildDependency(roomPackage, 'runtime', roomVersion),
+            rxJava2 : buildDependency(roomPackage, 'rxjava2', roomVersion),
+            compiler : buildDependency(roomPackage, 'compiler', roomVersion)
+    ]
+
+
+    daggerDependencies = [
+
+            dagger        : buildDependency(daggerPackage, 'dagger', daggerVersion),
+            daggerAndroid: buildDependency(daggerPackage,'dagger-android',daggerVersion),
+            daggerAndroidSupport: buildDependency(daggerPackage,'dagger-android-support',daggerVersion),
+            daggerCompiler: buildDependency(daggerPackage, 'dagger-compiler', daggerVersion),
+            daggerAndroidProcessor: buildDependency(daggerPackage,'dagger-android-processor',daggerVersion)
+
+    ]
+
+    testingDependencies = [
+
+            junit      : buildDependency(junitPackage, 'junit', junitVersion),
+
+    ]
+
+    okHttp = buildDependency(okHttpPackage, 'logging-interceptor', okHttpVersion)
+}
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}
